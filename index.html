@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Gayathri K | Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* ================= GLOBAL ================= */
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+  scroll-behavior:smooth;
+}
+
+body{
+  background:linear-gradient(135deg,#0f172a,#111827,#1e293b);
+  color:white;
+  overflow-x:hidden;
+}
+
+/* ================= ANIMATED BACKGROUND ================= */
+
+.bg-animation{
+  position:fixed;
+  width:100%;
+  height:100%;
+  overflow:hidden;
+  z-index:-10;
+}
+
+.bg-animation span{
+  position:absolute;
+  border-radius:50%;
+  background:rgba(255,255,255,.06);
+  animation:move 20s linear infinite;
+}
+
+.bg-animation span:nth-child(1){
+  width:300px;
+  height:300px;
+  left:5%;
+  top:20%;
+  background:rgba(168,85,247,.18);
+}
+
+.bg-animation span:nth-child(2){
+  width:220px;
+  height:220px;
+  left:70%;
+  top:55%;
+  background:rgba(59,130,246,.15);
+}
+
+.bg-animation span:nth-child(3){
+  width:130px;
+  height:130px;
+  left:25%;
+  top:10%;
+  background:rgba(255,255,255,.08);
+}
+
+@keyframes move{
+  0%{
+    transform:translateY(0px) rotate(0deg);
+  }
+  50%{
+    transform:translateY(-40px) rotate(180deg);
+  }
+  100%{
+    transform:translateY(0px) rotate(360deg);
+  }
+}
+
+/* ================= NAVBAR ================= */
+
+nav{
+  width:100%;
+  padding:22px 10%;
+  position:fixed;
+  top:0;
+  z-index:1000;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  backdrop-filter:blur(18px);
+  background:rgba(15,23,42,.55);
+  border-bottom:1px solid rgba(255,255,255,.05);
+}
+
+.logo{
+  font-size:1.5rem;
+  font-weight:700;
+  background:linear-gradient(to right,#ffffff,#c084fc);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+nav ul{
+  display:flex;
+  gap:28px;
+  list-style:none;
+}
+
+nav ul li a{
+  text-decoration:none;
+  color:#d1d5db;
+  transition:.3s;
+  position:relative;
+}
+
+nav ul li a::after{
+  content:'';
+  position:absolute;
+  width:0%;
+  height:2px;
+  background:#c084fc;
+  left:0;
+  bottom:-5px;
+  transition:.3s;
+}
+
+nav ul li a:hover::after{
+  width:100%;
+}
+
+nav ul li a:hover{
+  color:#fff;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:120px 20px 60px;
+}
+
+.hero-content{
+  max-width:900px;
+  animation:fadeUp 1.3s ease;
+}
+
+@keyframes fadeUp{
+  from{
+    opacity:0;
+    transform:translateY(50px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0px);
+  }
+}
+
+/* ================= PROFILE ================= */
+
+.hero img{
+  width:200px;
+  height:200px;
+  border-radius:50%;
+  object-fit:cover;
+  border:4px solid rgba(255,255,255,.1);
+  box-shadow:
+  0 0 25px rgba(192,132,252,.4),
+  0 0 70px rgba(59,130,246,.25);
+  animation:float 4s ease-in-out infinite;
+  transition:.4s;
+}
+
+.hero img:hover{
+  transform:scale(1.05);
+}
+
+@keyframes float{
+  0%,100%{
+    transform:translateY(0px);
+  }
+  50%{
+    transform:translateY(-12px);
+  }
+}
+
+/* ================= TEXT ================= */
+
+.hero h2{
+  margin-top:28px;
+  color:#d1d5db;
+  font-weight:400;
+}
+
+.hero h1{
+  font-size:5rem;
+  margin-top:10px;
+  line-height:1.1;
+  font-weight:700;
+  background:linear-gradient(to right,#ffffff,#c084fc,#60a5fa);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+.typing{
+  margin-top:20px;
+  font-size:1.1rem;
+  color:#e5e7eb;
+  border-right:3px solid #c084fc;
+  width:fit-content;
+  margin-left:auto;
+  margin-right:auto;
+  white-space:nowrap;
+  overflow:hidden;
+  animation:typing 4s steps(45) infinite alternate,
+            blink .8s infinite;
+}
+
+@keyframes typing{
+  from{
+    width:0;
+  }
+  to{
+    width:100%;
+  }
+}
+
+@keyframes blink{
+  50%{
+    border-color:transparent;
+  }
+}
+
+/* ================= BUTTONS ================= */
+
+.buttons{
+  margin-top:40px;
+  display:flex;
+  justify-content:center;
+  gap:18px;
+  flex-wrap:wrap;
+}
+
+.btn{
+  padding:15px 36px;
+  border-radius:50px;
+  text-decoration:none;
+  font-weight:600;
+  transition:.4s;
+}
+
+.primary{
+  background:linear-gradient(135deg,#c084fc,#60a5fa);
+  color:white;
+  box-shadow:0 10px 30px rgba(96,165,250,.25);
+}
+
+.secondary{
+  background:rgba(255,255,255,.06);
+  color:white;
+  border:1px solid rgba(255,255,255,.08);
+  backdrop-filter:blur(10px);
+}
+
+.btn:hover{
+  transform:translateY(-6px) scale(1.04);
+}
+
+/* ================= SECTION ================= */
+
+section{
+  padding:100px 10%;
+}
+
+.section-title{
+  text-align:center;
+  font-size:2.5rem;
+  margin-bottom:50px;
+  position:relative;
+}
+
+.section-title::after{
+  content:'';
+  width:90px;
+  height:4px;
+  background:linear-gradient(to right,#c084fc,#60a5fa);
+  position:absolute;
+  left:50%;
+  transform:translateX(-50%);
+  bottom:-12px;
+  border-radius:20px;
+}
+
+/* ================= CARD ================= */
+
+.card{
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:28px;
+  padding:40px;
+  margin-top:30px;
+  backdrop-filter:blur(16px);
+  transition:.4s;
+}
+
+.card:hover{
+  transform:translateY(-10px);
+  box-shadow:
+  0 15px 45px rgba(0,0,0,.35),
+  0 0 25px rgba(192,132,252,.15);
+}
+
+.card p{
+  color:#e5e7eb;
+  line-height:1.9;
+}
+
+.card ul{
+  padding-left:20px;
+  margin-top:20px;
+}
+
+.card ul li{
+  margin-bottom:12px;
+  color:#e5e7eb;
+}
+
+/* ================= SKILLS ================= */
+
+.skill{
+  margin:25px 0;
+}
+
+.skill h4{
+  margin-bottom:10px;
+}
+
+.bar{
+  width:100%;
+  height:12px;
+  background:#1e293b;
+  border-radius:20px;
+  overflow:hidden;
+}
+
+.bar span{
+  display:block;
+  height:100%;
+  border-radius:20px;
+  background:linear-gradient(to right,#c084fc,#60a5fa);
+  animation:load 2s ease;
+}
+
+@keyframes load{
+  from{
+    width:0;
+  }
+}
+
+/* ================= PROJECT ================= */
+
+.project-title{
+  font-size:1.35rem;
+  margin-bottom:15px;
+  color:#ffffff;
+}
+
+/* ================= STATS ================= */
+
+.stats{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:25px;
+  margin-top:40px;
+}
+
+.stat-box{
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.08);
+  padding:30px;
+  border-radius:24px;
+  text-align:center;
+  transition:.4s;
+}
+
+.stat-box:hover{
+  transform:translateY(-8px);
+}
+
+.stat-box h2{
+  font-size:2.5rem;
+  background:linear-gradient(to right,#c084fc,#60a5fa);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+.stat-box p{
+  margin-top:10px;
+  color:#d1d5db;
+}
+
+/* ================= CONTACT ================= */
+
+.contact p{
+  margin-bottom:15px;
+}
+
+.contact a{
+  color:#c084fc;
+  text-decoration:none;
+}
+
+/* ================= THANK YOU ================= */
+
+.thankyou{
+  text-align:center;
+  padding:80px 20px;
+  border-radius:30px;
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.08);
+  backdrop-filter:blur(18px);
+  animation:fadeGlow 3s infinite alternate;
+}
+
+.thankyou h1{
+  font-size:4rem;
+  margin-bottom:20px;
+  background:linear-gradient(to right,#ffffff,#c084fc,#60a5fa);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  animation:textGlow 2s infinite alternate;
+}
+
+.thankyou p{
+  color:#d1d5db;
+  font-size:1.1rem;
+  line-height:1.8;
+}
+
+@keyframes fadeGlow{
+
+  from{
+    box-shadow:
+    0 0 20px rgba(192,132,252,.15),
+    0 0 30px rgba(96,165,250,.10);
+  }
+
+  to{
+    box-shadow:
+    0 0 35px rgba(192,132,252,.25),
+    0 0 50px rgba(96,165,250,.18);
+  }
+
+}
+
+@keyframes textGlow{
+
+  from{
+    filter:drop-shadow(0 0 8px #c084fc);
+  }
+
+  to{
+    filter:drop-shadow(0 0 20px #60a5fa);
+  }
+
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+  text-align:center;
+  padding:35px;
+  color:#d1d5db;
+  border-top:1px solid rgba(255,255,255,.06);
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:768px){
+
+nav{
+  padding:18px 6%;
+}
+
+nav ul{
+  gap:14px;
+}
+
+.hero h1{
+  font-size:2.8rem;
+}
+
+.hero img{
+  width:160px;
+  height:160px;
+}
+
+.buttons{
+  flex-direction:column;
+  align-items:center;
+}
+
+.btn{
+  width:240px;
+}
+
+section{
+  padding:70px 6%;
+}
+
+.card{
+  padding:28px;
+}
+
+.typing{
+  font-size:.95rem;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- BACKGROUND -->
+
+<div class="bg-animation">
+<span></span>
+<span></span>
+<span></span>
+</div>
+
+<!-- NAVBAR -->
+
+<nav>
+
+<div class="logo">Gayathri K</div>
+
+<ul>
+<li><a href="#about">About</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#experience">Experience</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+
+</nav>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="hero-content">
+
+<img src="image/profile.jpg" alt="Gayathri K">
+
+<h2>Hello, I'm</h2>
+
+<h1>Gayathri K</h1>
+
+<div class="typing">
+Data Science & Analytics Student | AI Enthusiast
+</div>
+
+<div class="buttons">
+
+<a class="btn primary"
+href="Gayathri_K_Resume.pdf"
+download>
+Download Resume
+</a>
+
+<a class="btn secondary"
+href="https://www.linkedin.com/in/gayathri-k-565112313"
+target="_blank">
+LinkedIn Profile
+</a>
+
+<a class="btn primary"
+href="https://mail.google.com/mail/?view=cm&fs=1&to=gayug2974@gmail.com&su=Job%20Opportunity&body=Hi%20Gayathri,"
+target="_blank">
+Hire Me
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ABOUT -->
+
+<section id="about">
+
+<h2 class="section-title">About Me</h2>
+
+<div class="card">
+
+<p>
+I am a passionate Data Science and Analytics student with strong knowledge in Python, SQL, Tableau, Power BI, Excel, and Machine Learning fundamentals. I enjoy building intelligent systems and transforming raw data into meaningful insights.
+</p>
+
+<br>
+
+<p>
+I continuously improve my technical expertise through projects, certifications, workshops, and real-world implementations. My goal is to create innovative AI and analytics solutions that solve practical problems efficiently.
+</p>
+
+<ul>
+<li>Strong analytical & logical thinking</li>
+<li>Machine learning & predictive analysis</li>
+<li>Dashboard creation & data visualization</li>
+<li>Quick learner with adaptable mindset</li>
+</ul>
+
+</div>
+
+<div class="stats">
+
+<div class="stat-box">
+<h2>6+</h2>
+<p>Technical Skills</p>
+</div>
+
+<div class="stat-box">
+<h2>2+</h2>
+<p>Major Projects</p>
+</div>
+
+<div class="stat-box">
+<h2>8+</h2>
+<p>Certifications</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- SKILLS -->
+
+<section id="skills">
+
+<h2 class="section-title">Technical Skills</h2>
+
+<div class="card">
+
+<div class="skill">
+<h4>Python</h4>
+<div class="bar"><span style="width:88%"></span></div>
+</div>
+
+<div class="skill">
+<h4>SQL</h4>
+<div class="bar"><span style="width:82%"></span></div>
+</div>
+
+<div class="skill">
+<h4>Tableau</h4>
+<div class="bar"><span style="width:76%"></span></div>
+</div>
+
+<div class="skill">
+<h4>Power BI</h4>
+<div class="bar"><span style="width:72%"></span></div>
+</div>
+
+<div class="skill">
+<h4>Machine Learning</h4>
+<div class="bar"><span style="width:70%"></span></div>
+</div>
+
+</div>
+
+</section>
+
+<!-- PROJECTS -->
+
+<section id="projects">
+
+<h2 class="section-title">Projects</h2>
+
+<div class="card">
+
+<h3 class="project-title">
+Data Scan AI Project
+</h3>
+
+<p>
+Developed an AI-powered analytics system capable of scanning, preprocessing, analyzing, and visualizing large datasets intelligently using machine learning and smart analytics techniques.
+</p>
+
+<ul>
+<li>Implemented intelligent data preprocessing methods</li>
+<li>Analyzed structured and unstructured datasets</li>
+<li>Generated smart dashboards and visual reports</li>
+<li>Integrated machine learning concepts for prediction</li>
+<li>Improved decision-making using analytical workflows</li>
+<li>Enhanced data accuracy and processing efficiency</li>
+</ul>
+
+<br>
+
+<p>
+<strong>Tools & Technologies :</strong>
+Python, Pandas, NumPy, SQL, Tableau, Scikit-learn, Matplotlib, Seaborn
+</p>
+
+<br><br>
+
+<h3 class="project-title">
+Data-Driven Student Attendance Analyzer
+</h3>
+
+<p>
+Built an intelligent attendance analytics system to identify attendance trends, monitor student performance, and predict absenteeism using machine learning algorithms.
+</p>
+
+<ul>
+<li>Cleaned and preprocessed attendance datasets</li>
+<li>Visualized department-wise attendance trends</li>
+<li>Identified students at risk of low attendance</li>
+<li>Implemented Linear Regression prediction model</li>
+<li>Created analytical dashboards for reporting</li>
+<li>Supported data-driven educational decisions</li>
+</ul>
+
+<br>
+
+<p>
+<strong>Tools & Technologies :</strong>
+Python, Pandas, NumPy, Matplotlib, Seaborn, Scikit-learn, Tkinter
+</p>
+
+</div>
+
+</section>
+
+<!-- EXPERIENCE -->
+
+<section id="experience">
+
+<h2 class="section-title">Experience</h2>
+
+<div class="card">
+
+<h3 class="project-title">
+Data Analyst Intern – LITZ Tech
+</h3>
+
+<p>
+Worked on real-world data preprocessing, reporting, dashboard creation, visualization, and analytics workflows using Python, SQL, Excel, and business reporting tools.
+</p>
+
+<ul>
+<li>Created analytical reports and dashboards</li>
+<li>Worked with structured datasets using SQL</li>
+<li>Improved reporting efficiency through visualization</li>
+<li>Learned real-time business analytics workflows</li>
+</ul>
+
+</div>
+
+</section>
+
+<!-- CERTIFICATIONS -->
+
+<section>
+
+<h2 class="section-title">Certifications</h2>
+
+<div class="card">
+
+<ul>
+<li>NPTEL – Software Testing</li>
+<li>NPTEL – Introduction to Machine Learning</li>
+<li>Python for Data Science</li>
+<li>Google Analytics</li>
+<li>Object-Oriented Programming</li>
+<li>Full Stack Developer CI/CD</li>
+<li>Cloud Institution Workshop – Advanced R Programming</li>
+<li>Spark for Big Data Concepts</li>
+</ul>
+
+</div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+<h2 class="section-title">Contact</h2>
+
+<div class="card contact">
+
+<p>Email : gayug2974@gmail.com</p>
+
+<p>Phone : 8610484558</p>
+
+<p>Location : Udumalpet, Tiruppur, Tamil Nadu</p>
+
+<p>
+LinkedIn :
+<a href="https://www.linkedin.com/in/gayathri-k-565112313"
+target="_blank">
+gayathri-k-565112313
+</a>
+</p>
+
+</div>
+
+</section>
+
+<!-- THANK YOU -->
+
+<section>
+
+<div class="thankyou">
+
+<h1>Thank You</h1>
+
+<p>
+Thank you for visiting my portfolio website.
+I look forward to connecting and collaborating on innovative projects.
+</p>
+
+</div>
+
+</section>
+
+<footer>
+© 2025 Gayathri K — Portfolio Website
+</footer>
+
+</body>
+</html>
